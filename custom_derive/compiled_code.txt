@@ -1,0 +1,76 @@
+#![feature(prelude_import)]
+#[prelude_import]
+use std::prelude::rust_2018::*;
+#[macro_use]
+extern crate std;
+use function_name::named;
+
+use erc20::ERC20;
+use erc20_derive::ERC20;
+
+pub struct ECR20Contract {
+    name: String,
+    symbol: String,
+    total_supply: u128,
+}
+impl ERC20 for ECR20Contract {
+    fn new(name: String, symbol: String, initial_supply: u128) -> Self {
+        #[allow(dead_code)]
+        #[allow(non_camel_case_types)]
+        enum new__hack__ { }
+        macro_rules! function_name { () => ("new") }
+        { Self{name, symbol, total_supply: initial_supply,} }
+    }
+    fn name(&self) -> String {
+        #[allow(dead_code)]
+        #[allow(non_camel_case_types)]
+        enum name__hack__ { }
+        macro_rules! function_name { () => ("name") }
+        { self.name }
+    }
+    fn symbol(&self) -> String {
+        #[allow(dead_code)]
+        #[allow(non_camel_case_types)]
+        enum symbol__hack__ { }
+        macro_rules! function_name { () => ("symbol") }
+        { self.symbol }
+    }
+    fn total_supply(&self) -> u128 {
+        #[allow(dead_code)]
+        #[allow(non_camel_case_types)]
+        enum total_supply__hack__ { }
+        macro_rules! function_name { () => ("total_supply") }
+        { self.total_supply }
+    }
+}
+
+impl ECR20Contract {
+    fn new(name: String, symbol: String, total_supply: u128) -> Self {
+        Self{name, symbol, total_supply,}
+    }
+}
+
+fn main() {
+
+    let example_token =
+        ECR20Contract::new("4irelabium".to_owned(), "4lb".to_owned(),
+                           1000u128);
+
+    {
+        ::std::io::_print(::core::fmt::Arguments::new_v1(&["", ", ", ", ",
+                                                           "\n"],
+                                                         &match (&&example_token.name,
+                                                                 &&example_token.symbol,
+                                                                 &&example_token.total_supply)
+                                                              {
+                                                              (arg0, arg1,
+                                                               arg2) =>
+                                                              [::core::fmt::ArgumentV1::new(arg0,
+                                                                                            ::core::fmt::Display::fmt),
+                                                               ::core::fmt::ArgumentV1::new(arg1,
+                                                                                            ::core::fmt::Display::fmt),
+                                                               ::core::fmt::ArgumentV1::new(arg2,
+                                                                                            ::core::fmt::Display::fmt)],
+                                                          }));
+    };
+}
